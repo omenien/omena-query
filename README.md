@@ -1,20 +1,45 @@
 # `omena-query`
 
-Rust query boundary crate for Omena producer fragments and bridge surfaces.
+Internal Rust crate for the Omena query boundary.
 
-This crate owns consumer-facing query surfaces that group producer query
-fragments with the abstract-value projection contract and bridge-backed style
-semantic graph adapters.
+This crate owns the consumer-facing query surface that groups producer query
+fragments with the abstract-value projection contract.
+Source-resolution wrappers now route through `omena-resolver` so resolver
+ownership can move independently while query output contracts stay stable.
 
 Current public products:
 
-- `omena-query.boundary`
-- `omena-query.fragment-bundle`
-- `omena-query.selected-query-adapter-capabilities`
-- `omena-semantic.style-semantic-graph-batch`
+- `omena-query.boundary` — summary of the query boundary and delegated
+  producer fragment surfaces.
+- `omena-query.fragment-bundle` — grouped expression semantics, source
+  resolution, and selector usage query fragments.
+- `omena-query.selected-query-adapter-capabilities` — declared backend
+  capability matrix and engine-shadow-runner command contract for the current
+  selected-query adapter path.
+- selected-query query fragment wrappers for expression semantics, source
+  resolution, and selector usage runner commands.
+- selected-query canonical producer wrappers for source resolution,
+  expression semantics, and selector usage runner commands. These keep the
+  existing JSON output contracts stable while moving ownership into
+  `omena-query`.
+- selected-query style semantic graph adapter wrappers. These preserve the
+  `omena-semantic.style-semantic-graph` products while delegating graph assembly
+  to `omena-bridge`.
 
 Primary check:
 
 ```sh
-cargo test
+pnpm cme-check run rust/omena-query/boundary
+```
+
+Boundary ownership check:
+
+```sh
+pnpm cme-check run rust/omena-query/runner-boundary
+```
+
+Split boundary check:
+
+```sh
+pnpm cme-check bundle rust/omena-query/split-boundary
 ```

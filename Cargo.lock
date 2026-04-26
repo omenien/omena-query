@@ -58,6 +58,16 @@ dependencies = [
  "omena-abstract-value",
  "omena-bridge",
  "omena-engine-input-producers",
+ "omena-resolver",
+ "serde",
+]
+
+[[package]]
+name = "omena-resolver"
+version = "0.1.0"
+source = "git+https://github.com/omenien/omena-resolver.git?rev=4018a24#4018a248116926fef1041000dcb5436709c706d9"
+dependencies = [
+ "omena-engine-input-producers",
  "serde",
 ]
 
