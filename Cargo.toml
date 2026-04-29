@@ -1,6 +1,6 @@
 [package]
 name = "omena-query"
-version = "0.1.6"
+version = "0.1.7"
 edition = "2024"
 license = "MIT"
 description = "Omena query boundary over producer fragments, resolver, and bridge surfaces"
@@ -27,6 +27,6 @@ panic = "warn"
 [dependencies]
 engine-input-producers = { package = "omena-engine-input-producers", version = "0.1.3" }
 omena-abstract-value = "0.1.2"
-omena-bridge = "0.1.4"
+omena-bridge = "0.1.5"
 omena-resolver = "0.1.0"
 serde = { version = "1.0", features = ["derive"] }
