@@ -25,9 +25,11 @@ expect_used = "warn"
 panic = "warn"
 
 [dependencies]
-engine-input-producers = { package = "omena-engine-input-producers", version = "0.1.3" }
-engine-style-parser = { package = "omena-engine-style-parser", version = "0.1.5" }
-omena-abstract-value = "0.1.2"
-omena-bridge = "0.1.9"
-omena-resolver = "0.1.1"
+engine-input-producers = { package = "omena-engine-input-producers", git = "https://github.com/omenien/omena-engine-input-producers.git", rev = "7b08f67" }
+engine-style-parser = { package = "omena-engine-style-parser", git = "https://github.com/omenien/omena-engine-style-parser.git", rev = "5e809bf" }
+omena-abstract-value = { git = "https://github.com/omenien/omena-abstract-value.git", rev = "f27f50f" }
+omena-bridge = { git = "https://github.com/omenien/omena-bridge.git", rev = "4829a94" }
+omena-incremental = { git = "https://github.com/omenien/omena-incremental.git", rev = "89e5631" }
+omena-resolver = { git = "https://github.com/omenien/omena-resolver.git", rev = "8749192" }
 serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
